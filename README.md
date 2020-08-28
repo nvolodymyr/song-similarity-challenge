@@ -11,6 +11,20 @@ The team is looking for new music but is having trouble finding songs that they 
 * Angular CLI
 * Angular Component Library (i.e. Angular Material)
 
+## How To Complete
+1. Fork this Repo
+2. Create your application in the root of this directory
+3. Send your fork to me directly or via a Pull Request
+
+### Example of Directory Structure
+```bash
+./
+├── README.md
+└── my_app
+    └── src
+        └── app
+```
+
 ## Requirements
 While working on this project, try to keep Angular and Web Development best practices in mind as much as possible. An attempt was made to keep the application simple to leave room for this. Here's a list of a few concepts you might consider when working on the application: 
 * How different types of modules might be used (Routed Modules, Feature Modules, etc)
@@ -56,6 +70,7 @@ While working on this project, try to keep Angular and Web Development best prac
 ## Resources
 ### Wireframes
 You are not required to follow these wireframes, but if you would like AN approach on how to build this UI, feel free to use this:
+
 [Interactive Wireframe](https://www.figma.com/proto/LSoza6gcKmeGMld9nQgDSg/SearchLy-Wireframes?node-id=2%3A3&viewport=244%2C463%2C0.2206893414258957&scaling=min-zoom)
 
 ### Images
