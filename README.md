@@ -19,39 +19,39 @@ While working on this project, try to keep Angular and Web Development best prac
 * Responsive Web Behaviors
 
 ### User Stories
-*As a* Teammate in search of new music
-*I want to* be able to submit a query and be provided a list of results from SearchLy
-*So* I can know if SearchLy has any information on my provided query.
+**As a** Teammate in search of new music
+**I want to** be able to submit a query and be provided a list of results from SearchLy
+**So** I can know if SearchLy has any information on my provided query.
 
-*As a* Teammate in search of new music
-*I want to* view a list of songs that are similar to my chosen song 
-*So* I can broaden my musical horizons.
+**As a** Teammate in search of new music
+**I want to** view a list of songs that are similar to my chosen song 
+**So** I can broaden my musical horizons.
 
-*As a* Teammate in search of new music
-*I want to* be able to get further information on a given song
-*So* I can dive deeper.
+**As a** Teammate in search of new music
+**I want to** be able to get further information on a given song
+**So** I can dive deeper.
 
 ### Behaviors
-*Scenario: Search Known Songs*
-*GIVEN* I am viewing the application
-*WHEN* I enter my query into the search input
-*THEN* display a list of results
+**Scenario: Search Known Songs**
+**GIVEN** I am viewing the application
+**WHEN** I enter my query into the search input
+**THEN** display a list of results
 
-*Scenario: Find Related Songs*
-*GIVEN* I am viewing a list of songs known by SearchLy
-*WHEN* I select a song
-*THEN* show me a list of songs that are related
-*AND* show me its similarity percentage
+**Scenario: Find Related Songs**
+**GIVEN** I am viewing a list of songs known by SearchLy
+**WHEN** I select a song
+**THEN** show me a list of songs that are related
+**AND** show me its similarity percentage
 
-*Scenario: Deeper Dive*
-*GIVEN* I am viewing a list of related songs
-*WHEN* I have external resource links provided by SearchLy
-*THEN* ensure I am able to visit those links without destroying the application
+**Scenario: Deeper Dive**
+**GIVEN** I am viewing a list of related songs
+**WHEN** I have external resource links provided by SearchLy
+**THEN** ensure I am able to visit those links without destroying the application
 
-*Scenario: Loading States*
-*GIVEN* I am interacting with the application
-*WHEN* I perform an operation that requires a network request
-*THEN* ensure there is visual feedback in the application to show me my data is loading
+**Scenario: Loading States**
+**GIVEN** I am interacting with the application
+**WHEN** I perform an operation that requires a network request
+**THEN** ensure there is visual feedback in the application to show me my data is loading
 
 ## Resources
 ### Wireframes
