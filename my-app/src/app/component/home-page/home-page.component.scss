@@ -1,0 +1,16 @@
+.search-field {
+  height: 100%;
+  max-width: 560px;
+
+  &__search-icon {
+    cursor: pointer;
+  }
+
+  &__form-field {
+    width: 100%;
+  }
+
+  &__submit-btn {
+    margin-left: auto;
+  }
+}

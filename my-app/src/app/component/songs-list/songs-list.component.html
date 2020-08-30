@@ -1,0 +1,17 @@
+<section class="songs-list">
+  <mat-card
+    class="songs-list__item"
+    (click)="showInfo(song)"
+    *ngFor="let song of songsList"
+  >
+    <h2>{{song?.song_name}}</h2>
+    <p>{{song?.artist_name}}</p>
+    <p>{{song?.percentage}}</p>
+    <p>Match</p>
+
+    <p>More Info</p>
+  </mat-card>
+
+  <mat-spinner *ngIf="songsService.requestStatusSubject.getValue() === 'pending'"></mat-spinner>
+  <p *ngIf="songsService.requestStatusSubject.getValue() === 'error'"> Something work wrong</p>
+</section>

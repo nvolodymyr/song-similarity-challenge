@@ -1,1 +1,60 @@
-<p>home-page works!</p>
+<section
+  class="home-page"
+  fxLayout="row"
+  fxLayoutAlign="center"
+>
+  <mat-card class="search-field">
+    <mat-card-content>
+      <h2 class="search-field__title">Find your new favorite song</h2>
+      <p class="search-field__sub-title">Any genre, any time period. If we`ve heard it, we can help.</p>
+
+     <mat-form-field class="search-field__form-field">
+       <mat-label>Search by Artist or Song</mat-label>
+       <mat-icon
+          matSuffix
+          class="search-field__search-icon"
+          (click)="search.reset('')"
+       >
+         {{search.value ? "close" : "search"}}
+       </mat-icon>
+       <input
+           matInput
+           class="search-field__search"
+           [formControl]="search"
+           [matAutocomplete]="songsList"
+       >
+
+       <mat-autocomplete #songsList="matAutocomplete" [displayWith]="displayWith">
+         <ng-container *ngIf="search.value && (songsList$ | async)?.length; else emptyResults">
+           <mat-option
+             *ngFor="let song of songsList$ | async"
+             class="search-field__option"
+             [value]="song"
+           >
+             <strong
+               class="search-field__song-name"
+             >{{song.name}}</strong>
+           </mat-option>
+         </ng-container>
+         <ng-template #emptyResults>
+           <mat-option *ngIf="search.value" disabled>
+             <p>No results found.</p>
+           </mat-option>
+         </ng-template>
+       </mat-autocomplete>
+
+     </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+      <button
+        mat-raised-button
+        color="primary"
+        class="search-field__submit-btn"
+        [disabled]="!selectedSong"
+        (click)="onSubmit()"
+      >
+        Submit
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</section>
