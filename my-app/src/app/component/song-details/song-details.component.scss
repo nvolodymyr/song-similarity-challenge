@@ -1,13 +1,18 @@
 .song-details {
   width: 100%;
-  height: auto;
+  position: relative;
 
   &__card {
-    mat-card-header {
       width: 100%;
       text-align: center;
+
+    mat-icon {
+      position: absolute;
+      right: -6px;
+      top: -6px;
     }
-  }
+     }
+
   &__header {
     width: 100%;
   }
@@ -28,4 +33,11 @@ mat-card-content {
 mat-card-title {
   width: 100%;
   text-align: center;
+}
+
+.spinner {
+  position: fixed;
+  background-color: rgb(black, 0.3);
+  height: 100%;
+  width: 100%;
 }

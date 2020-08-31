@@ -2,20 +2,21 @@ import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
 import {Observable, of} from 'rxjs';
 import {HomePageComponent} from "../../component/home-page/home-page.component";
+import {SongsService} from "../songs.service";
 
 @Injectable({
   providedIn: 'root'
 })
 export class SongListGuardService implements CanActivate {
 
-  private trigger = false;
+  private hasSongsList = false;
 
   constructor(private router: Router,
-              private homepage: HomePageComponent) {
+              private songsService: SongsService) {
 
-    this.homepage.songsList$.subscribe((data) => {
-      if (data) {
-        this.trigger = true;
+    this.songsService.songsList$.subscribe((data) => {
+      if (data.length) {
+        this.hasSongsList = true;
       }
     })
 
@@ -23,12 +24,12 @@ export class SongListGuardService implements CanActivate {
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot)
     : Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    if (!this.trigger) {
-      this.router.navigateByUrl('welcome').then(r => r);
-      return  of(false);
-    } else {
-      return of(true);
+    if (this.songsService.requestStatusSubject.getValue() !== 'pending') {
+      this.router.navigateByUrl('welcome');
 
+      return of(false);
     }
+
+      return of(true);
   }
 }

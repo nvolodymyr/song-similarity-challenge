@@ -27,7 +27,6 @@ export class HeaderComponent implements OnInit {
       .subscribe((nameTitle: string) => {
         if (nameTitle) {
           this.headerTitle = (nameTitle.match(/\w+[-]?[a-z]+/).toString());
-          console.log(this.headerTitle);
         }
       });
   }

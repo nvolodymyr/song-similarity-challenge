@@ -11,10 +11,16 @@
 
     <p>More Info</p>
   </mat-card>
-
-  <mat-spinner
-    fxLayout="row"
-    fxLayoutAlign="center center"
-    *ngIf="songsService.requestStatusSubject.getValue() === 'pending'"></mat-spinner>
   <p *ngIf="songsService.requestStatusSubject.getValue() === 'error'"> Something work wrong</p>
 </section>
+
+<div
+  class="spinner"
+  fxLayout="row"
+  fxLayoutAlign="center center"
+  *ngIf="songsService.requestStatusSubject.getValue() === 'pending'"
+>
+  <mat-spinner
+
+  ></mat-spinner>
+</div>

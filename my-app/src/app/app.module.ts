@@ -15,7 +15,7 @@ import {MatIconModule} from "@angular/material/icon";
 import {ReactiveFormsModule} from "@angular/forms";
 import {SharedModule} from "./shared/shared.module";
 import {SongsService} from "./service/songs.service";
-import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from "@angular/common/http";
 import { MatAutocompleteModule} from "@angular/material/autocomplete";
 import {MatButtonModule} from "@angular/material/button";
 import { SongsListComponent } from './component/songs-list/songs-list.component';
@@ -23,6 +23,7 @@ import { SongDetailsComponent } from './component/song-details/song-details.comp
 import {MatDialogModule} from "@angular/material/dialog";
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import {FlexLayoutModule} from "@angular/flex-layout";
+import {ParamInterceptor} from "./custom-http-interceptor";
 
 @NgModule({
   declarations: [

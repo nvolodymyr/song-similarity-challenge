@@ -3,27 +3,27 @@
   fxLayout="column"
   fxLayoutAlign="center center"
 >
-  <mat-card class="song-details__card">
+  <div class="song-details__card">
     <mat-icon
      matSuffix
      (click)="closePopUp()">
       {{"close"}}
     </mat-icon>
 
-    <mat-card-header
+    <div
       fxLayout="column"
       fxLayoutAlign="center center"
       class="song-details__header">
       <mat-card-title>{{data.song_name}}</mat-card-title>
       <mat-card-subtitle>{{data.artist_name}}</mat-card-subtitle>
-    </mat-card-header>
+    </div>
 
-    <mat-card-content>
+    <div>
       <p>{{data.percentage}} %</p>
 
       <p>{{data.lyrics}} %</p>
 
-    </mat-card-content>
-  </mat-card>
+    </div>
+  </div>
 
 </section>
