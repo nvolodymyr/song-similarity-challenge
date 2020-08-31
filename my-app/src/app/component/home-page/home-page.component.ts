@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl} from "@angular/forms";
-import {OnDestroyComponent} from "../../shared/components/on-destroy/on-destroy.component";
-import {debounceTime, distinctUntilChanged, map, takeUntil} from "rxjs/operators";
-import {SongsService} from "../../service/songs.service";
-import {Observable, of} from "rxjs";
-
+import { FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
+import { debounceTime, distinctUntilChanged, map, takeUntil } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 import { isString, get, isObject } from 'lodash';
-import { Router } from "@angular/router";
-import {SelectedSongModel} from "../../model/selected-song.model";
+
+import { OnDestroyComponent } from '../../shared/components/on-destroy/on-destroy.component';
+import { SelectedSongModel } from '../../model/selected-song.model';
+import { SongsService } from '../../service/songs.service';
 
 @Component({
   selector: 'app-home-page',
@@ -45,7 +45,6 @@ export class HomePageComponent extends OnDestroyComponent implements OnInit {
         );
       }
 
-      // this.songsList$.subscribe((data:SelectedSongModel[]) => console.log(data));
     });
   }
 

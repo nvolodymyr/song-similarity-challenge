@@ -1,6 +1,18 @@
+.home-page {
+  height: 90%;
+  width: auto;
+  position: relative;
+
+  span {
+    &:hover {
+      background-color: #c1c1c1;
+    }
+  }
+}
+
 .search-field {
-  height: 100%;
   max-width: 560px;
+  position: relative;
 
   &__search-icon {
     cursor: pointer;
@@ -8,9 +20,13 @@
 
   &__form-field {
     width: 100%;
+    padding-bottom: 20px;
   }
 
   &__submit-btn {
-    margin-left: auto;
+    position: absolute;
+    right: 20px;
+    bottom: 10px;
   }
 }
+

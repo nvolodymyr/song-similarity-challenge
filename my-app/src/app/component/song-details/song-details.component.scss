@@ -1,0 +1,31 @@
+.song-details {
+  width: 100%;
+  height: auto;
+
+  &__card {
+    mat-card-header {
+      width: 100%;
+      text-align: center;
+    }
+  }
+  &__header {
+    width: 100%;
+  }
+}
+ mat-icon {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+   cursor: pointer;
+}
+mat-card-content {
+  p {
+    &:first-of-type {
+      text-align: center;
+    }
+  }
+}
+mat-card-title {
+  width: 100%;
+  text-align: center;
+}

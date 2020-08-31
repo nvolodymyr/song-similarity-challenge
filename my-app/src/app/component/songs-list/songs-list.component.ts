@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import {SongsService} from "../../service/songs.service";
-import {OnDestroyComponent} from "../../shared/components/on-destroy/on-destroy.component";
-import {map, takeUntil} from "rxjs/operators";
+import { MatDialog } from '@angular/material/dialog';
+import { OnDestroyComponent } from '../../shared/components/on-destroy/on-destroy.component';
+import { map, takeUntil } from 'rxjs/operators';
+import { get } from 'lodash';
 
-import { get } from 'lodash'
-import {SongDetailsComponent} from "../song-details/song-details.component";
-import {MatDialog} from "@angular/material/dialog";
+import { SongsService } from '../../service/songs.service';
+import { SongDetailsComponent } from '../song-details/song-details.component';
 
 @Component({
   selector: 'app-songs-list',
@@ -13,17 +13,21 @@ import {MatDialog} from "@angular/material/dialog";
   styleUrls: ['./songs-list.component.scss']
 })
 export class SongsListComponent extends OnDestroyComponent implements OnInit {
- private  songsList: any[];
+ public  songsList: any[];
 
   constructor(
     public dialog: MatDialog,
-    private  songsService: SongsService,
+    public  songsService: SongsService,
 
   ) {
     super();
   }
 
   ngOnInit() {
+  this.setInitialSongs();
+  }
+
+  private setInitialSongs(): void {
     this.songsService.songsList$.pipe(
       takeUntil(this.destroy$),
       map((list) => get(list, 'response.similarity_list'))
@@ -33,7 +37,7 @@ export class SongsListComponent extends OnDestroyComponent implements OnInit {
         this.songsList = list;
       },
       () => this.songsService.requestStatusSubject.next('error'),
-      )
+    )
   }
 
   showInfo(song: any): void {
@@ -41,6 +45,7 @@ export class SongsListComponent extends OnDestroyComponent implements OnInit {
       data: song,
       hasBackdrop: true,
       closeOnNavigation: true,
+      disableClose: true,
       panelClass: 'custom-dialog-container',
     });
   }

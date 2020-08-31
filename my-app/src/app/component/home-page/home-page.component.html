@@ -1,8 +1,11 @@
 <section
   class="home-page"
   fxLayout="row"
-  fxLayoutAlign="center"
+  fxLayoutAlign="center center"
 >
+  <div class="error">
+
+  </div>
   <mat-card class="search-field">
     <mat-card-content>
       <h2 class="search-field__title">Find your new favorite song</h2>
@@ -31,9 +34,9 @@
              class="search-field__option"
              [value]="song"
            >
-             <strong
+             <span
                class="search-field__song-name"
-             >{{song.name}}</strong>
+             >{{song.name}}</span>
            </mat-option>
          </ng-container>
          <ng-template #emptyResults>

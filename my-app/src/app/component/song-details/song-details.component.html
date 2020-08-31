@@ -1,1 +1,29 @@
-<p>{{data.artist_name}}</p>
+<section
+  class="song-details"
+  fxLayout="column"
+  fxLayoutAlign="center center"
+>
+  <mat-card class="song-details__card">
+    <mat-icon
+     matSuffix
+     (click)="closePopUp()">
+      {{"close"}}
+    </mat-icon>
+
+    <mat-card-header
+      fxLayout="column"
+      fxLayoutAlign="center center"
+      class="song-details__header">
+      <mat-card-title>{{data.song_name}}</mat-card-title>
+      <mat-card-subtitle>{{data.artist_name}}</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <p>{{data.percentage}} %</p>
+
+      <p>{{data.lyrics}} %</p>
+
+    </mat-card-content>
+  </mat-card>
+
+</section>
