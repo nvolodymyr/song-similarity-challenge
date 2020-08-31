@@ -9,6 +9,7 @@ import {filter, map} from "rxjs/operators";
 })
 export class HeaderComponent implements OnInit {
  headerTitle: string;
+
   constructor(
     private readonly router: Router,
   ) { }
@@ -16,6 +17,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
     this.initTitle();
   }
+
   private initTitle(): void {
     this.router.events
       .pipe(

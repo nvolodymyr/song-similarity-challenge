@@ -6,7 +6,8 @@ import {SongsService} from "../../service/songs.service";
 import {Observable, of} from "rxjs";
 
 import { isString, get, isObject } from 'lodash';
-import {Router} from "@angular/router";
+import { Router } from "@angular/router";
+import {SelectedSongModel} from "../../model/selected-song.model";
 
 @Component({
   selector: 'app-home-page',
@@ -16,9 +17,8 @@ import {Router} from "@angular/router";
 export class HomePageComponent extends OnDestroyComponent implements OnInit {
 
   search = new FormControl('');
-  songsList$: Observable<any> = of([]);
-
-  selectedSong: {id: number, name: string};
+  songsList$: Observable<Array<SelectedSongModel>>;
+  selectedSong: SelectedSongModel;
 
   constructor(
     private readonly router: Router,
@@ -36,7 +36,6 @@ export class HomePageComponent extends OnDestroyComponent implements OnInit {
       distinctUntilChanged(),
       debounceTime(300),
     ).subscribe((value) => {
-      console.log(value);
       if (isObject(value)) {
         this.selectedSong = value;
       } else {
@@ -46,12 +45,11 @@ export class HomePageComponent extends OnDestroyComponent implements OnInit {
         );
       }
 
-      this.songsList$.subscribe(data => console.log(data));
+      // this.songsList$.subscribe((data:SelectedSongModel[]) => console.log(data));
     });
   }
 
   onSubmit(): void {
-    console.log(this.selectedSong.id);
     this.songsService.fetchSimilaritySongs(this.selectedSong.id)
     this.router.navigate(['songs-list']);
   }

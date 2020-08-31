@@ -22,6 +22,7 @@ import { SongsListComponent } from './component/songs-list/songs-list.component'
 import { SongDetailsComponent } from './component/song-details/song-details.component';
 import {MatDialogModule} from "@angular/material/dialog";
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
+import {FlexLayoutModule} from "@angular/flex-layout";
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
     MatAutocompleteModule,
     MatDialogModule,
     MatProgressSpinnerModule,
+    FlexLayoutModule,
   ],
   providers: [
     SongsService,
