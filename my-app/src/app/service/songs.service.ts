@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
-import { BehaviorSubject, Observable, of } from "rxjs";
-import { mainSearchLink } from "../links";
+import { HttpClient } from '@angular/common/http';
+import { BehaviorSubject, Observable, of } from 'rxjs';
+import { mainSearchLink } from '../links';
 
 type RequestStatus = 'draft' | 'pending' | 'success' | 'error';
 
@@ -19,7 +19,7 @@ export class SongsService {
 
   public searchSongs(searchedValue: string): Observable<any> {
     return this.http.get(`${mainSearchLink}/song/search?query=${searchedValue}`, {
-      headers: { "Access-Control-Allow-Origin": "*" }
+      headers: { 'Access-Control-Allow-Origin': '*' }
     });
   }
 
@@ -27,7 +27,7 @@ export class SongsService {
     this.requestStatusSubject.next('pending');
 
     this.songsList$ = this.http.get(`${mainSearchLink}/similarity/by_song?song_id=${id}`, {
-      headers: { "Access-Control-Allow-Origin": "*" }
+      headers: { 'Access-Control-Allow-Origin': '*' }
     });
   }
 }
